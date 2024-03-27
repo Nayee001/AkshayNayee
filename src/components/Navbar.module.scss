@@ -1,0 +1,57 @@
+@import "../variables.modules";
+
+.text-uppercase{
+    text-transform: uppercase;
+}
+nav {
+  transition: $transition;
+}
+
+.active {
+  border-bottom: 5px solid;
+  border-image-slice: 1;
+}
+
+li {
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-3px);
+    transition: $transition;
+  }
+}
+
+.link:hover {
+  color: unset;
+}
+
+// Navbar.module.scss
+@keyframes floatCloud {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(calc(100% + 835px)); // Assuming the cloud's width is 100px
+  }
+}
+
+.cloudAnimation {
+  position: absolute;
+  top: 4%; // Center it vertically within the header, or adjust as needed
+  left: 0;
+  transform: translateY(-50%); // This centers the cloud vertically
+  width: 300px; // Adjust the width of your cloud image as necessary
+  height: auto; // Maintain aspect ratio
+  animation: floatCloud 60s linear infinite; // Adjust time for the desired speed
+  
+}
+
+.birdsAnimation {
+  position: absolute;
+  top: 8%; // Center it vertically within the header, or adjust as needed
+  left: 0;
+  transform: translateY(-60%); // This centers the cloud vertically
+  width: 300px; // Adjust the width of your cloud image as necessary
+  height: auto; // Maintain aspect ratio
+  animation: floatCloud 25s linear infinite; // Adjust time for the desired speed
+}
