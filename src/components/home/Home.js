@@ -37,8 +37,8 @@ export default function Home() {
             </Box>
             <Box display={'flex'} gap={'1.5rem'} justifyContent={'center'} fontSize={{xs: '2rem', md: '2.5rem'}}>
             <a
-              href="/path/to/your/resume.pdf" // Link to your resume file
-              download="Your_Resume_File_Name.pdf" // Suggested file name for download
+              href="../pdf/Akshay.pdf"
+              download="akshay_cv.pdf"
               className={Style.downloadButton}
             >
               Download Resume
