@@ -39,6 +39,10 @@ export const info = {
       text: "Student - Masters in Software Engineering",
     },
     {
+      emoji: "☁️",
+      text: "AWS Certified Cloud Practitioner"
+    }
+    {
       emoji: "📧",
       text: "akshaynayee1@gmail.com",
     },
