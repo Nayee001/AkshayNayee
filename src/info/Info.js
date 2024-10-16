@@ -41,13 +41,18 @@ export const info = {
     {
       emoji: "☁️",
       text: "AWS Certified Cloud Practitioner"
-    }
+    },
     {
       emoji: "📧",
       text: "akshaynayee1@gmail.com",
     },
   ],
   socials: [
+    {
+      link: "https://www.instagram.com/aakkii01?igsh=enZ0eXUwdWFpcW8x&utm_source=qr",
+      icon: "fa fa-instagram",
+      label: "instagram",
+    },
     {
       link: "https://github.com/Nayee001/Nayee001",
       icon: "fa fa-github",

@@ -14,16 +14,22 @@ const links = [
         active: 'home'
     },
     {
+        name: 'About Me',
+        to: '/about',
+        active: 'about'
+    },
+    {
         name: info.initials,
         type: 'initials',
         to: '/',
         active: 'home',
         class: 'text-uppercase' 
     },
+
     {
-        name: 'About Me',
-        to: '/about',
-        active: 'about'
+        name: 'My Blogs',
+        to: '/blogs',
+        active: 'my blogs'
     },
 ]
 

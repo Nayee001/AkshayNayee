@@ -6,6 +6,7 @@ import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
 import {Box} from "@mui/material";
 import {info} from "../../info/Info";
+import {Link} from 'react-router-dom'; 
 
 export default function Home() {
    const [currentPosition, setCurrentPosition] = useState(0);
@@ -36,13 +37,9 @@ export default function Home() {
                ))}
             </Box>
             <Box display={'flex'} gap={'1.5rem'} justifyContent={'center'} fontSize={{xs: '2rem', md: '2.5rem'}}>
-            <a
-              href="../pdf/Akshay.pdf"
-              download="akshay_cv.pdf"
-              className={Style.downloadButton}
-            >
-              Download Resume
-            </a>
+            <Link to="/blogs" className={Style.blogButton}>
+              Read Blogs
+            </Link>
                {info.socials.map((social, index) => (
                   <SocialIcon key={index} link={social.link} icon={social.icon} label={social.label} />
                ))}
