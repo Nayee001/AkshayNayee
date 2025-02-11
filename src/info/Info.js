@@ -1,7 +1,6 @@
 import self from "../img/ak.png";
 import melolem from "../img/melolem.png";
 
-
 export let colors = [
   "rgb(0,255,164)",
   "rgb(166,104,255)",
@@ -16,31 +15,27 @@ export const info = {
   position: [
     "Full-Stack Developer",
     "Software Engineer",
-    "Creative Technologist",
+    "IoT & Cloud Enthusiast",
   ],
   selfPortrait: self,
   gradient: `-webkit-linear-gradient(135deg, ${colors})`,
   baseColor: colors[0],
   miniBio: [
     {
-      emoji: "☕",
-      text: "Chaai ❤️",
-    },
-    {
-      emoji: "🌎",
-      text: "Located in US",
+      emoji: "🌍",
+      text: "Based in the U.S.",
     },
     {
       emoji: "💼",
-      text: "Graduate Assistant at Gannon University",
+      text: "Graduate Research Assistant at Gannon University",
     },
     {
-      emoji: "👨🏻‍🎓",
-      text: "Student - Masters in Software Engineering",
+      emoji: "🎓",
+      text: "Master’s in Software Engineering",
     },
     {
       emoji: "☁️",
-      text: "AWS Certified Cloud Practitioner"
+      text: "AWS Certified Cloud Practitioner",
     },
     {
       emoji: "📧",
@@ -49,40 +44,43 @@ export const info = {
   ],
   socials: [
     {
-      link: "https://www.instagram.com/aakkii01?igsh=enZ0eXUwdWFpcW8x&utm_source=qr",
+      link: "https://www.instagram.com/aakkii01",
       icon: "fa fa-instagram",
-      label: "instagram",
+      label: "Instagram",
     },
     {
-      link: "https://github.com/Nayee001/Nayee001",
+      link: "https://github.com/Nayee001",
       icon: "fa fa-github",
-      label: "github",
+      label: "GitHub",
     },
     {
       link: "https://www.linkedin.com/in/akshaynayee1/",
       icon: "fa fa-linkedin",
-      label: "linkedin",
+      label: "LinkedIn",
     },
   ],
-  bio: "Greetings! I'm Akshaykumar Nayee, a Graduate Research Assistant at Gannon University. I'm currently in my second semester of studying Computer and Information Science, specializing in Software Engineering. With more than three years of experience, I'm enthusiastic about full-stack development and Machine Learning.",
+  bio: "Hi, I'm Akshaykumar Nayee! A passionate Full-Stack Developer and Graduate Research Assistant specializing in Software Engineering at Gannon University. With over four years of experience, I thrive on building scalable web applications, IoT platforms, and machine learning-driven solutions. My expertise spans full-stack development, cloud computing, and real-time data processing. Let's innovate together!",
   skills: {
     proficientWith: [
       "Python",
       "PHP",
-      "Django",
-      "Raspberry Pi",
+      "JavaScript",
+      "React.js",
+      "Next.js",
       "Laravel",
       "Flask",
-      "Cake-Php",
+      "Django",
+      "Raspberry Pi",
       "MySQL",
       "MongoDB",
-      "Github",
+      "PostgreSQL",
       "Linux",
+      "Docker",
       "Bootstrap",
-      "Html5",
+      "HTML5",
       "CSS",
     ],
-    exposedTo: ["Node Js", "React Js", "Docker", "Redis"],
+    exposedTo: ["Node.js", "Redis", "Kubernetes", "GraphQL"],
   },
   portfolio: [
     {
