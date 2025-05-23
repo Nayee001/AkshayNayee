@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Style from './Home.module.scss';
-import me from '../../img/ak1.png';
+import me from '../../img/akshay.jpeg';
 import classNames from 'classnames';
 import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
