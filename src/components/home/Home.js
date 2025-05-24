@@ -50,7 +50,7 @@ export default function Home() {
          </Box>
 
          {/* Floating Buttons */}
-         <Box position="fixed" bottom="2rem" right="2rem" display="flex" flexDirection="column" gap="1rem">
+         {/* <Box position="fixed" bottom="2rem" right="2rem" display="flex" flexDirection="column" gap="1rem">
             <IconButton color="primary" href="#top" aria-label="Scroll to top">
                <KeyboardArrowUpIcon />
             </IconButton>
@@ -60,7 +60,7 @@ export default function Home() {
             <IconButton color="success" href="tel:+18045044741" aria-label="Call Akshay">
                <PhoneIcon />
             </IconButton>
-         </Box>
+         </Box> */}
       </Box>
    );
 }

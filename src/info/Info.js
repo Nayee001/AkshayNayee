@@ -1,4 +1,4 @@
-import self from "../img/ak.png";
+import self from "../img/ak1.png";
 import melolem from "../img/melolem.png";
 
 export let colors = [
@@ -9,7 +9,7 @@ export let colors = [
 ];
 
 export const info = {
-  firstName: "Akshay",
+  firstName: "Akshaykumar",
   lastName: "Nayee",
   initials: "AK",
   position: [

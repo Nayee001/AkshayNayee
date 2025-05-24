@@ -1,57 +1,124 @@
-@import "../variables.modules";
-
-.text-uppercase{
-    text-transform: uppercase;
-}
-nav {
-  transition: $transition;
-}
-
-.active {
-  border-bottom: 5px solid;
-  border-image-slice: 1;
+.navbar {
+  // background-color: #000;
+  color: #fff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-li {
-  transition: $transition;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.shadowed {
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  overflow: hidden;
+}
+
+[data-splitting][data-char] {
+  animation: slideUp 0.4s ease forwards;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+[data-splitting][data-char]:nth-child(n) {
+  animation-delay: calc(var(--char-index) * 0.05s);
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.4rem;
+  transition: transform 0.3s;
 
   &:hover {
-    transform: translateY(-3px);
-    transition: $transition;
+    transform: scale(1.1);
   }
 }
 
-.link:hover {
-  color: unset;
+.darkText {
+  color: #fff !important;
+}
+.lightText {
+  color: #000 !important;
 }
 
-// Navbar.module.scss
-@keyframes floatCloud {
-  0% {
-    transform: translateX(-100%);
+.darkIcon {
+  color: #fff !important;
+}
+.lightIcon {
+  color: #000 !important;
+}
+
+.togglerWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.menuButton {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
   }
-  100% {
-    transform: translateX(calc(100% + 835px)); // Assuming the cloud's width is 100px
+}
+
+.hideOnMobile {
+  @media (max-width: 768px) {
+    display: none !important;
   }
 }
 
-.cloudAnimation {
-  position: absolute;
-  top: 4%; // Center it vertically within the header, or adjust as needed
-  left: 0;
-  transform: translateY(-50%); // This centers the cloud vertically
-  width: 300px; // Adjust the width of your cloud image as necessary
-  height: auto; // Maintain aspect ratio
-  animation: floatCloud 60s linear infinite; // Adjust time for the desired speed
-  
+.sidebar {
+  width: 250px;
+  padding: 1rem;
+  background-color: #000;
+  height: 100%;
+  color: #fff;
 }
 
-.birdsAnimation {
-  position: absolute;
-  top: 8%; // Center it vertically within the header, or adjust as needed
-  left: 0;
-  transform: translateY(-60%); // This centers the cloud vertically
-  width: 300px; // Adjust the width of your cloud image as necessary
-  height: auto; // Maintain aspect ratio
-  animation: floatCloud 25s linear infinite; // Adjust time for the desired speed
+.sidebarLink {
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    color: #00c6ff;
+  }
 }
