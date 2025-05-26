@@ -12,9 +12,9 @@ export default function ComingSoon() {
                     <Typography variant="h5" align="center">
                         I`m working hard to bring you this content. Stay tuned!
                     </Typography>
-                    {/* <Typography align="center" style={{fontFamily: "'Dancing Script', cursive", marginTop: '2rem', fontSize: '22px'}}>
+                    <Typography align="center" style={{fontFamily: "'Dancing Script', cursive", marginTop: '2rem', fontSize: '22px'}}>
                         Akshaykumar Nayee
-                    </Typography> */}
+                    </Typography>
                 </Grid>
             </Grid>
         </Box>
