@@ -10,9 +10,14 @@ import { info } from "../info/Info";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import PhoneIcon from "@mui/icons-material/Phone";
+import MailIcon from "@mui/icons-material/Mail";
+import DragHandleIcon from "@mui/icons-material/DragHandle";
+import CloseIcon from "@mui/icons-material/Close";
 
 export default function Navbar({ darkMode, handleClick }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -21,12 +26,22 @@ export default function Navbar({ darkMode, handleClick }) {
     return () => clearTimeout(timer);
   }, []);
 
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const toggleSidebar = () => {
+    if (sidebarOpen) {
+      setClosing(true);
+      setTimeout(() => {
+        setSidebarOpen(false);
+        setClosing(false);
+      }, 400);
+    } else {
+      setSidebarOpen(true);
+    }
+  };
 
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Projects", path: "/portfolio" },
+    { name: "Resume", path: "/portfolio" },
     { name: "Blogs", path: "/blogs" },
   ];
 
@@ -44,16 +59,25 @@ export default function Navbar({ darkMode, handleClick }) {
             className={`${Style.logo} ${
               darkMode ? Style.darkText : Style.lightText
             }`}
-            data-splitting="chars"
           >
-            {info.firstName} {info.lastName}
+            {"Akshaykumar".split("").map((char, i) => (
+              <span key={i} style={{ "--char-index": i }}>
+                {char}
+              </span>
+            ))}
+            &nbsp;
+            {"Nayee".split("").map((char, i) => (
+              <span key={i + 20} style={{ "--char-index": i + 20 }}>
+                {char}
+              </span>
+            ))}
           </a>
         </Box>
 
         <Box className={Style.right}>
           <IconButton
             component="a"
-            href="https://linkedin.com"
+            href={info.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className={`${Style.hideOnMobile} ${
@@ -65,7 +89,7 @@ export default function Navbar({ darkMode, handleClick }) {
           </IconButton>
           <IconButton
             component="a"
-            href="https://instagram.com"
+            href={info.instagram}
             target="_blank"
             rel="noopener noreferrer"
             className={`${Style.hideOnMobile} ${
@@ -77,7 +101,7 @@ export default function Navbar({ darkMode, handleClick }) {
           </IconButton>
           <IconButton
             component="a"
-            href="https://github.com"
+            href={info.socials.github}
             target="_blank"
             rel="noopener noreferrer"
             className={`${Style.hideOnMobile} ${
@@ -92,27 +116,42 @@ export default function Navbar({ darkMode, handleClick }) {
             <Toggler darkMode={darkMode} handleClick={handleClick} />
           </Box>
 
-          {!sidebarOpen && (
-            <IconButton
-              onClick={toggleSidebar}
-              className={Style.menuButton}
-              aria-label="Open Menu"
-            >
-              <span className={Style.bar}></span>
-              <span className={Style.bar}></span>
-              <span className={Style.bar}></span>
-            </IconButton>
-          )}
+          <Box
+            onClick={toggleSidebar}
+            className={`${Style.menuButton} ${sidebarOpen ? Style.open : ""}`}
+            aria-label={sidebarOpen ? "Close Menu" : "Open Menu"}
+            role="button"
+          >
+            <DragHandleIcon
+              className={darkMode ? Style.darkIcon : Style.lightIcon}
+            />
+          </Box>
         </Box>
       </Box>
 
       <Drawer
         anchor="right"
-        open={sidebarOpen}
+        open={sidebarOpen || closing}
         onClose={toggleSidebar}
-        PaperProps={{ className: Style.drawerPaper }}
+        PaperProps={{
+          className: `${Style.drawerPaper} ${
+            closing ? Style.drawerPaperClosing : Style.drawerPaperOpening
+          }`,
+        }}
+        hideBackdrop={false}
+        ModalProps={{ keepMounted: true }}
       >
         <Box className={Style.sidebar} role="presentation">
+          <IconButton
+            onClick={toggleSidebar}
+            className={Style.closeButton}
+            aria-label="Close Sidebar"
+          >
+            <CloseIcon
+              className={darkMode ? Style.darkIcon : Style.lightIcon}
+            />
+          </IconButton>
+
           <Box className={Style.sidebarTop}>
             <p>
               Looking for a full-time position where I can make a meaningful
@@ -121,9 +160,10 @@ export default function Navbar({ darkMode, handleClick }) {
               <br />
               Let’s <strong>connect</strong> and talk about the possibilities.
             </p>
+
             <Box className={Style.socialIcons}>
               <a
-                href="https://linkedin.com"
+                href={info.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -131,7 +171,7 @@ export default function Navbar({ darkMode, handleClick }) {
                 <LinkedInIcon />
               </a>
               <a
-                href="https://instagram.com"
+                href={info.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -139,19 +179,30 @@ export default function Navbar({ darkMode, handleClick }) {
                 <InstagramIcon />
               </a>
               <a
-                href="https://github.com"
+                href={info.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
               >
                 <GitHubIcon />
               </a>
+              <a href="mailto:akshaynayee1@gmail.com" aria-label="Email">
+                <MailIcon />
+              </a>
+              <a href="tel:+18145044741" aria-label="Phone">
+                <PhoneIcon />
+              </a>
             </Box>
           </Box>
 
           <Box className={Style.sidebarBottom}>
             {navLinks.map((link, index) => (
-              <Link key={index} to={link.path} className={Style.sidebarNavLink}>
+              <Link
+                key={index}
+                to={link.path}
+                className={Style.sidebarNavLink}
+                onClick={toggleSidebar}
+              >
                 {link.name}
               </Link>
             ))}

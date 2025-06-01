@@ -12,6 +12,9 @@ export const info = {
   firstName: "Akshaykumar",
   lastName: "Nayee",
   initials: "AK",
+  linkedin: "https://www.linkedin.com/in/akshaynayee1/",
+  instagram: "https://www.instagram.com/aakkii01",
+  github: "https://github.com/Nayee001",
   position: [
     "Full-Stack Developer",
     "Software Engineer",
